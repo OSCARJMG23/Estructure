@@ -11,7 +11,7 @@ namespace Dominio.Interfaces
         Task<IEnumerable<Persona>> GetListarEmpleados();
         Task<IEnumerable<Persona>> GetListarEmpleadosVigilantes();
         Task<IEnumerable<Persona>> GetClientesVivanBGA();
-        Task<IEnumerable<Persona>> GetEmpleadosVivanbgOPiedecuesta();
+        Task<IEnumerable<Persona>> GetEmpleadosVivangironOPiedecuesta();
         Task<IEnumerable<Persona>> GetClientesMas5AñosAntiguedad();
     }
 }

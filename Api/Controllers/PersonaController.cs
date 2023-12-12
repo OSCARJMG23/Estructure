@@ -80,12 +80,12 @@ namespace Api.Controllers
             return _mapper.Map<List<PersonaDto>>(Persona);
         }
 
-        [HttpGet("empladosVivanBgaOPiedecuesta")]
+        [HttpGet("empladosVivangironOPiedecuesta")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<PersonaDto>>> GetEmpleadosVivanBgaOPiedecuesta()
+        public async Task<ActionResult<IEnumerable<PersonaDto>>> GetEmpleadosVivangironOPiedecuesta()
         {
-            var Persona = await _unitOfWork.Personas.GetEmpleadosVivanbgOPiedecuesta();
+            var Persona = await _unitOfWork.Personas.GetEmpleadosVivangironOPiedecuesta();
             return _mapper.Map<List<PersonaDto>>(Persona);
         }
 

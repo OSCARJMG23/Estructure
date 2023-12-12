@@ -57,11 +57,11 @@ namespace Aplicacion.Repository
             return Clientes;
         }
 
-        public async Task<IEnumerable<Persona>> GetEmpleadosVivanbgOPiedecuesta()
+        public async Task<IEnumerable<Persona>> GetEmpleadosVivangironOPiedecuesta()
         {
             var empleados = await _context.Personas
             .Where(e=>e.IdTipoPersonaNavigation.Descripcion.ToLower() == "empleado" 
-                && e.IdCiudadNavigation.NombreCiudad.ToLower() == "bucaramanga" || e.IdCiudadNavigation.NombreCiudad.ToLower() == "piedecuesta")
+                && e.IdCiudadNavigation.NombreCiudad.ToLower() == "giron" || e.IdCiudadNavigation.NombreCiudad.ToLower() == "piedecuesta")
             .ToListAsync();
 
             return empleados;
