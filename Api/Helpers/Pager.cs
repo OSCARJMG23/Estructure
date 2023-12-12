@@ -12,10 +12,10 @@ namespace Api.Helpers
         public int PageSize { get; private set; }
         public int Total { get; private set; }
         public List<T> Registers { get; private set; }
-        public Pager()
+        /* public Pager()
         {
 
-        }
+        } */
 
         public Pager(List<T> registers, int total, int pageIndex,int pageSize,string _search)
         {
