@@ -1,5 +1,6 @@
 using System.Reflection;
 using Api.Extensions;
+using AspNetCoreRateLimit;
 using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
 
@@ -13,6 +14,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureCors();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
+builder.Services.AddAplicacionServices();
+builder.Services.ConfiguraRatelimiting();
+builder.Services.ConfigureApiVersioning();
+builder.Services.AddJwt(builder.Configuration);
+
 
 builder.Services.AddDbContext<ApiContext>(options =>
 {
@@ -33,8 +39,13 @@ app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+
 app.UseAuthorization();
+
+app.UseIpRateLimiting();
 
 app.MapControllers();
 
 app.Run();
+ 
